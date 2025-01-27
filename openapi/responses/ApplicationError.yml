@@ -1,0 +1,6 @@
+oneOf:
+  - $ref: "./ErrorTypes/GenericError.yml"
+discriminator:
+  propertyName: "type"
+  mapping:
+    GenericError: "./ErrorTypes/GenericError.yml"

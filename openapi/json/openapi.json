@@ -1,0 +1,75 @@
+{
+  "openapi" : "3.1.0",
+  "info" : {
+    "title" : "pure-ecs API",
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "/"
+  } ],
+  "paths" : {
+    "/" : {
+      "get" : {
+        "operationId" : "SayHello",
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "description" : "OK"
+          },
+          "500" : {
+            "description" : "Internal Server Error"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SayHello_default_response"
+                }
+              }
+            },
+            "description" : "Application Error"
+          }
+        },
+        "tags" : [ "HelloWorld" ]
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "SayHello_default_response" : {
+        "discriminator" : {
+          "mapping" : {
+            "GenericError" : "./ErrorTypes/GenericError.yml"
+          },
+          "propertyName" : "type"
+        },
+        "oneOf" : [ {
+          "$ref" : "#/components/schemas/SayHello_default_response_oneOf"
+        } ]
+      },
+      "SayHello_default_response_oneOf" : {
+        "allOf" : [ {
+          "properties" : {
+            "type" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "type" ]
+        }, {
+          "properties" : {
+            "message" : {
+              "type" : "string"
+            }
+          },
+          "required" : [ "message" ]
+        } ]
+      }
+    }
+  }
+}
