@@ -1,3 +1,5 @@
+inspiration/working template repo: [flappybirb](https://github.com/bturner1273/flappybirb)
+
 consider renaming to simplecs-ts
 
 sim - simulation
