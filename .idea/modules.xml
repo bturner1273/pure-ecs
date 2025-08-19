@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/service/.idea/modules/pureecs.iml" filepath="$PROJECT_DIR$/service/.idea/modules/pureecs.iml" />
-      <module fileurl="file://$PROJECT_DIR$/service/.idea/modules/pureecs-build.iml" filepath="$PROJECT_DIR$/service/.idea/modules/pureecs-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pure-ecs.iml" filepath="$PROJECT_DIR$/pure-ecs.iml" />
     </modules>
   </component>
 </project>
